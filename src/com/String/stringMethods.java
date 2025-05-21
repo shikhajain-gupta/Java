@@ -27,12 +27,12 @@ public class stringMethods {
         //System.out.println(s1.matches(s2));
 
         String myStr = " Split a string by   spaces, and also   punctuation.   ";
-        String regex = "[,\\.\\s]";
+        String regex = "[,\\.\\s]+";
         String[] myArray = myStr.split(regex);
         for (String s : myArray) {
             System.out.println(s);
         }
-        System.out.println(myStr.trim());
+        System.out.println(myStr.trim().replaceAll("\\s+", " "));
 
 
     }
