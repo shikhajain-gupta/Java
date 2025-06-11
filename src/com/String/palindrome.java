@@ -9,20 +9,41 @@ public class palindrome {
         String s1= sa.trim();
         String s=s1.replaceAll("\\s+","");
         System.out.println(s);
-        char[] ch= s.toCharArray();
-        StringBuilder sb=new StringBuilder();
-        for(int i=ch.length-1; i>=0; i--)
-        {
-            sb.append(ch[i]);
+
+        int start = 0;
+        int end = s.length() - 1;
+        boolean a=false;
+        while (start < end) {
+            if (s.charAt(start) == s.charAt(end)) {
+                a = true;
+            }
+            start++;
+            end--;
         }
-        System.out.println(sb);
-        if(s.equals(sb.toString()))
+        if(!a)
+        {
+            System.out.println("Entered string is not palindrome");
+        }
+        else
         {
             System.out.println("Entered string is palindrome");
         }
-        else {
-            System.out.println("Entered string is not palindrome");
-        }
+
+
+//        char[] ch= s.toCharArray();
+//        StringBuilder sb=new StringBuilder();
+//        for(int i=ch.length-1; i>=0; i--)
+//        {
+//            sb.append(ch[i]);
+//        }
+//        System.out.println(sb);
+//        if(s.equals(sb.toString()))
+//        {
+//            System.out.println("Entered string is palindrome");
+//        }
+//        else {
+//            System.out.println("Entered string is not palindrome");
+//        }
     }
 
 }
